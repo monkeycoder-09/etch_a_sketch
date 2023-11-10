@@ -1,3 +1,6 @@
+let isDrawing = false;
+
+
 document.addEventListener("DOMContentLoaded", function() {
     const container = document.querySelector(".container");
 
@@ -5,12 +8,18 @@ document.addEventListener("DOMContentLoaded", function() {
         const gridSquare = document.createElement("div");
         gridSquare.classList.add("grid-square");
 
-        gridSquare.addEventListener("mouseenter", function() {
-            gridSquare.classList.add("hovered");
+        gridSquare.addEventListener("mousedown", function() {
+            isDrawing = true;
         });
 
-        gridSquare.addEventListener("mouseleave", function(){
-            gridSquare.classList.remove("hovered");
+        gridSquare.addEventListener("mouseup", function() {
+            isDrawing = false;
+        });
+
+        gridSquare.addEventListener("mousemove", function(){
+            if (isDrawing) {
+                gridSquare.classList.add("drawn")
+            }
         });
 
         container.appendChild(gridSquare);
