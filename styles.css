@@ -7,15 +7,22 @@ body {
 }
 
 .container {
+    width: 500px;
+    margin: 20px auto;
     display: flex;
     flex-wrap: wrap;
-    gap:  2px;
+    gap: 2px;
+}
+
+.reset-button {
+    display: block;
+    margin: 10px 0;
+    padding: 8px;
+    cursor: pointer;
 }
 
 .grid-square {
-    width: calc(100% / 16 - 2px - 2px);
-    height: 0;
-    padding-bottom: calc(100% / 16 - 2px - 2px);
+    box-sizing: border-box;
     border: 1px solid #000;
     transition: background-color 0.3s; 
 }
