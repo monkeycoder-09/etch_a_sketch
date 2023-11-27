@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.querySelector(".container");
-    const resetButton = document.querySelector(".reset-button");
+    const clearButton = document.querySelector(".clear-button");
     const slider = document.querySelector("#grid-slider");
     const sliderValue = document.querySelector("#slider-value");
     let isDrawing = false;
@@ -37,11 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    resetButton.addEventListener("click", function () {
+    clearButton.addEventListener("click", function () {
         createGrid(slider.value);
     });
 
     slider.addEventListener("input", function(){
+        createGrid(slider.value)
         sliderValue.textContent = slider.value;
     })
 
