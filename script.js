@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.querySelector(".container");
     const resetButton = document.querySelector(".reset-button");
+    const slider = document.querySelector("#grid-slider");
+    const sliderValue = document.querySelector("#slider-value");
     let isDrawing = false;
 
     function createGrid(size) {
         container.innerHTML = "";
 
         const containerWidth = 500;
-        const squareWidth = containerWidth / size - 2;
+        const squareWidth = containerWidth / size;
 
         for (let i = 0; i < size * size; i++) {
             const gridSquare = document.createElement("div");
@@ -36,18 +38,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     resetButton.addEventListener("click", function () {
-        const newSize = prompt("Enter the number of squares per side (max: 16): ");
-        const validatedSize = parseInt(newSize, 10);
-
-        // Check if the input is a number and within the limit
-        if (!isNaN(validatedSize) && validatedSize > 0 && validatedSize <= 16) {
-            createGrid(validatedSize);
-        } else {
-            alert("Please enter a valid number between 1 and 16.");
-        }
+        createGrid(slider.value);
     });
+
+    slider.addEventListener("input", function(){
+        sliderValue.textContent = slider.value;
+    })
 
 
     // Initial grid creation
-    createGrid(16); // You can set the initial size here
+    createGrid(slider.value); // You can set the initial size here
 });

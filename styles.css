@@ -8,25 +8,36 @@ body {
 
 .container {
     width: 500px;
-    margin: 20px auto;
+    margin: 20px 20px;
     display: flex;
     flex-wrap: wrap;
-    gap: 2px;
+    border: 5px solid #000;
+    gap: 0px;
 }
 
 .reset-button {
     display: block;
-    margin: 10px 0;
+    margin: 5px 5px;
     padding: 8px;
     cursor: pointer;
 }
 
 .grid-square {
     box-sizing: border-box;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     transition: background-color 0.3s; 
 }
 
 .grid-square.drawn {
     background-color: #3498db;
+}
+
+.slider-container {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.slider-label {
+    margin-right: 10px;
 }
