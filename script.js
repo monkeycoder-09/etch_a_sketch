@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const clearButton = document.querySelector(".clear-button");
     const slider = document.querySelector("#grid-slider");
     const sliderValue = document.querySelector("#slider-value");
+    const eraserButton = document.querySelector(".eraser-button");
     let isDrawing = false;
+    let isErasing = false;
 
     function createGrid(size) {
         container.innerHTML = "";
@@ -29,8 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
             gridSquare.addEventListener("mousemove", function () {
                 if (isDrawing) {
-                    gridSquare.classList.add("drawn");
-                }
+                    if(isErasing) {
+                        gridSquare.classList.remove("drawn");
+                    }else {
+                        gridSquare.classList.add("drawn");
+                    }
+                }   
             });
 
             container.appendChild(gridSquare);
@@ -44,6 +50,11 @@ document.addEventListener("DOMContentLoaded", function () {
     slider.addEventListener("input", function(){
         createGrid(slider.value)
         sliderValue.textContent = slider.value;
+    })
+
+    eraserButton.addEventListener("click", function() {
+        eraserButton.classList.toggle("active");
+        isErasing = eraserButton.classList.contains("active");
     })
 
 
