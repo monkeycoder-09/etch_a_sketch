@@ -45,53 +45,24 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    document.addEventListener("DOMContentLoaded", function () {
+        const colorModeBtn = document.querySelector(".color-mode-btn");
+        const eraserButton = document.querySelector(".eraser-button");
+    
+        colorModeBtn.addEventListener("click", function () {
+            colorModeBtn.classList.toggle("active");
+            eraserButton.classList.remove("active");
+    
+            isColorMode = colorModeBtn.classList.contains("active");
+            isErasing = false;
+            isDrawing = false;
+        });
+    
+    
+    });
 
-
-
-    // function createGrid(size) {
-    //     container.innerHTML = "";
-
-    //     const containerWidth = 500;
-    //     const squareWidth = containerWidth / size;
-
-    //     for (let i = 0; i < size * size; i++) {
-    //         const gridSquare = document.createElement("div");
-    //         gridSquare.classList.add("grid-square");
-    //         gridSquare.style.width = `${squareWidth}px`;
-    //         gridSquare.style.height = `${squareWidth}px`;
-            
-    //         gridSquare.addEventListener("mousedown", function () {
-    //             isDrawing = true;
-    //             isErasing = eraserButton.classList.contains("active");
-    //             isColorMode = colorModeBtn.classList.contains("active");
-    //             if (isColorMode) {
-    //                 const selectedColor = colorPick.value;
-    //                 gridSquare.style.backgroundColor = selectedColor;
-    //             }
-    //         });
-
-    //         gridSquare.addEventListener("mouseup", function () {
-    //             isDrawing = false;
-    //         });
-
-    //         gridSquare.addEventListener("mousemove", function () {
-    //             if (isDrawing) {
-    //                 if (isErasing) {
-    //                     gridSquare.classList.remove("drawn");
-    //                 } else if (isColorMode) {
-    //                     const selectedColor = colorPick.value;
-    //                     gridSquare.style.backgroundColor = selectedColor;
-    //                     gridSquare.classList.add("drawn");
-    //                 }
-    //                 else {
-    //                     gridSquare.classList.add("drawn");
-    //                 }
-    //             }
-    //         });
-
-    //         container.appendChild(gridSquare);
-    //     }
-    // }
+    
+    
 
     slider.addEventListener("input", function() {
         createGrid(slider.value)
@@ -117,8 +88,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     clearButton.addEventListener("click", function () {
         createGrid(slider.value);
+        isColorMode = true;
     });
-    
+
     createGrid(slider.value); // You can set the initial size here
     
     

@@ -1,8 +1,20 @@
 body {
+    font-family: 'Geologica', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    text-align: center;
+    padding: 10px;
+    background-color:#ff6f61;
+    color: #fff;
     margin: 0;
 }
 
@@ -15,27 +27,6 @@ body {
     gap: 0px;
 }
 
-.color-mode-btn {
-    display: block;
-    margin: 5px 5px;
-    padding: 8px;
-    cursor: pointer;
-}
-
-.clear-button {
-    display: block;
-    margin: 5px 5px;
-    padding: 8px;
-    cursor: pointer;
-}
-
-.eraser-button {
-    display: block;
-    margin: 5px 5px;
-    padding: 8px;
-    cursor: pointer;
-}
-
 .grid-square {
     box-sizing: border-box;
     /* border: 1px solid #000; */
@@ -43,13 +34,69 @@ body {
 }
 
 
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px; /* Add some padding to the content */
+}
+
+.color-mode-pick {
+    padding-left: 0px;
+    cursor: pointer;
+    width: 100%;
+    color: #000;
+    border: 10px, #000;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.colorpicker {
+    width: 100%;
+    cursor: pointer;
+}
+
+.color-mode-btn,
+.clear-button,
+.eraser-button {
+    width: 100%;
+    margin: 5px 0; /* Adjust margin for better spacing */
+    padding: 10px;
+    cursor: pointer;
+    /* background-color: #3498db; */
+    color: #000;
+    border: 10px, #000;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.color-mode-btn.active,
+.eraser-button.active,
+.clear-button.active {
+    background-color: #ffcc5c;
+    transition: background-color 0.3s; 
+}
+
+.color-mode-btn:hover,
+.eraser-button:hover {
+    background-color: #ffd986;
+}
+
+.clear-button:hover{
+    background-color: #70a9a1;
+}
+
 .slider-container {
-    margin-right: 10px;
-    display: block;
+    margin-top: 10px; /* Adjust margin for better spacing */
+    display: flex;
     align-items: center;
 }
 
-
 .slider-label {
-    margin: 10px;
+    margin-right: 10px; /* Add some spacing between label and slider */
+}
+
+.slider {
+    width: 100%; /* Make the slider take up full width */
 }
