@@ -15,6 +15,13 @@ body {
     gap: 0px;
 }
 
+.color-mode-btn {
+    display: block;
+    margin: 5px 5px;
+    padding: 8px;
+    cursor: pointer;
+}
+
 .clear-button {
     display: block;
     margin: 5px 5px;
@@ -35,16 +42,14 @@ body {
     transition: background-color 0.3s; 
 }
 
-.grid-square.drawn {
-    background-color: #3498db;
-}
 
 .slider-container {
-    margin-top: 10px;
-    display: flex;
+    margin-right: 10px;
+    display: block;
     align-items: center;
 }
 
+
 .slider-label {
-    margin-right: 10px;
+    margin: 10px;
 }
