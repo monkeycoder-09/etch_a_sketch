@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.querySelector(".container");
     const clearButton = document.querySelector(".clear-button");
-    const slider = document.querySelector("#grid-slider");
-    const sliderValue = document.querySelector("#slider-value");
+    const slider = document.querySelector(".grid-slider");
+    const sliderValue = document.querySelector(".slider-value");
     const eraserButton = document.querySelector(".eraser-button");
     const colorModeBtn = document.querySelector(".color-mode-btn");
     const colorPick = document.querySelector(".colorpicker");
@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
             gridSquare.addEventListener("mousemove", function () {
                 if (isDrawing) {
                     if (isErasing) {
-                        gridSquare.style.backgroundColor = ""; // Use the eraser logic
-                    } else {
+                        gridSquare.style.backgroundColor = "";
+                    } else if (colorModeBtn.classList.contains("active")) {
                         const selectedColor = colorPick.value;
                         gridSquare.style.backgroundColor = selectedColor;
                     }
@@ -44,26 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
             container.appendChild(gridSquare);
         }
     }
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const colorModeBtn = document.querySelector(".color-mode-btn");
-        const eraserButton = document.querySelector(".eraser-button");
-    
-        colorModeBtn.addEventListener("click", function () {
-            colorModeBtn.classList.toggle("active");
-            eraserButton.classList.remove("active");
-    
-            isColorMode = colorModeBtn.classList.contains("active");
-            isErasing = false;
-            isDrawing = false;
-        });
     
     
-    });
-
-    
-    
-
     slider.addEventListener("input", function() {
         createGrid(slider.value)
         sliderValue.textContent = slider.value;
@@ -88,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     clearButton.addEventListener("click", function () {
         createGrid(slider.value);
-        isColorMode = true;
+       
     });
 
     createGrid(slider.value); // You can set the initial size here

@@ -13,7 +13,7 @@ h1 {
     top: 0;
     text-align: center;
     padding: 10px;
-    background-color:#ff6f61;
+    background-color: #333;
     color: #fff;
     margin: 0;
 }
@@ -25,11 +25,11 @@ h1 {
     flex-wrap: wrap;
     border: 5px solid #000;
     gap: 0px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
 }
 
 .grid-square {
     box-sizing: border-box;
-    /* border: 1px solid #000; */
     transition: background-color 0.3s; 
 }
 
@@ -43,60 +43,97 @@ h1 {
 }
 
 .color-mode-pick {
-    padding-left: 0px;
-    cursor: pointer;
-    width: 100%;
-    color: #000;
-    border: 10px, #000;
-    border-radius: 5px;
-    text-align: center;
+    margin-top: 10px; 
+    display: flex;
+    align-items: center;
+    
+}
+
+.color-label {
+    margin-right: 10px;
 }
 
 .colorpicker {
-    width: 100%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     cursor: pointer;
+    border: none;
+    background: none;
+    appearance: none;
 }
+
 
 .color-mode-btn,
 .clear-button,
 .eraser-button {
     width: 100%;
-    margin: 5px 0; /* Adjust margin for better spacing */
+    margin: 5px 0;
     padding: 10px;
     cursor: pointer;
-    /* background-color: #3498db; */
-    color: #000;
-    border: 10px, #000;
+    color: #333;
+    border: 10px, #333;
     border-radius: 5px;
     text-align: center;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
 
 .color-mode-btn.active,
 .eraser-button.active,
 .clear-button.active {
-    background-color: #ffcc5c;
+    background-color: #333;
+    color: #ededed;
     transition: background-color 0.3s; 
+    
 }
 
 .color-mode-btn:hover,
 .eraser-button:hover {
-    background-color: #ffd986;
+    background-color: #333;
+    color: #ededed;
 }
 
 .clear-button:hover{
-    background-color: #70a9a1;
+    background-color: #333;
+    color: #ededed;
 }
 
 .slider-container {
-    margin-top: 10px; /* Adjust margin for better spacing */
+    margin-top: 10px; 
     display: flex;
     align-items: center;
+    
 }
 
 .slider-label {
-    margin-right: 10px; /* Add some spacing between label and slider */
+    margin-right: 10px; 
 }
 
 .slider {
-    width: 100%; /* Make the slider take up full width */
+    width: 100%;
+     
+}
+
+.slider::-webkit-slider-thumb {
+    cursor: pointer;
+    
+} 
+
+/* Adjust the color of the slider */
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 30%;
+    height: 10px;
+    background: #ededed;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 17px;
+    height: 17px;
+    background: #333;
+    border-radius: 50%;
+    cursor: pointer;
 }

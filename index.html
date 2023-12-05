@@ -8,19 +8,20 @@
 </head>
 <body>
 
-    <h1>Etch-A-Sketch</h1>
+    <h1>ETCH-A-SKETCH</h1>
 
     <div class="content">
     <div class="color-mode-pick">
-        <input type="color" class="colorpicker" value="#ff6f61">
+        <label class="color-label">Color Pick: </label>
+        <input type="color" class="colorpicker" value="#333">
     </div>
     <button class="color-mode-btn">Color Mode</button>
     <button class="eraser-button">Eraser</button>
     <button class="clear-button">Clear</button>
     <div class="slider-container">
         <label class="slider-label">Number of Grid Squares: </label>
-        <input type="range" id="grid-slider" min="1" max="64" value="64">
-        <span id="slider-value">64</span>
+        <input type="range" class="grid-slider" min="1" max="64" value="16">
+        <span class="slider-value">16</span>
     </div>
     </div>
     
